@@ -50,7 +50,6 @@ class GameFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
 
-        // Inflate the layout for this fragment
         _binding = FragmentGameBinding.inflate(inflater, container, false)
 
         // Shuffles the questions and sets the question index to the first question.
@@ -81,10 +80,10 @@ class GameFragment : Fragment() {
                         setQuestion()
                         binding.invalidateAll()
                     } else {
-                        it.findNavController().navigate(R.id.gameWonFragment)
+                        it.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions,questionIndex))
                     }
                 } else {
-                    it.findNavController().navigate(R.id.gameOverFragment)
+                    it.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
                 }
             }
         }

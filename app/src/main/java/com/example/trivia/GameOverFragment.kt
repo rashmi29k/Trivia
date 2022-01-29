@@ -16,8 +16,9 @@ class GameOverFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         _binding = FragmentGameOverBinding.inflate(inflater,container, false)
+
         binding?.tryAgainButton?.setOnClickListener {
-            it.findNavController().navigate(R.id.titleFragment)
+            it.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
         }
         return binding?.root
     }
